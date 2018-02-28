@@ -1,33 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+<head>
+  <!-- Meta Information -->
+  <title>Tweeter - Home Page</title>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <!-- Font Decleration -->
+  <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!-- External JS -->
+  <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+</head>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+<body>
+  <!-- Top nav bar (fixed) -->
+  <nav id="nav-bar">
+    <img class="logo" src="/images/bird.png">
+    <span class="header">Tweeter</span>
+    <button class="tweetButton">New Tweet</button>
+  </nav>
+  <!-- Page-specific (main) content here -->
+  <main class="container">
 
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+    <section class="new-tweet">
+      <h2 id="compTweetTitle">Compose Tweet</h2>
+      <form method="POST" action="/tweets/">
+        <textarea id="inputText" name="text" placeholder="What are you humming about?"></textarea>
+        <input id="tweetButton" type="submit" value="Tweet">
+        <span class="counter">140</span>
+      </form>
+    </section>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
-  </head>
+    <section class="posts">
 
-  <body>
+    </section>
 
-    <!-- Top nav bar (fixed) -->
-    <nav id="nav-bar">
-      <img class="logo" src="/images/bird.png" width="80px" height="80px">
-      <span class="header">Tweeter</span>
-    </nav>
+    <article class="tweet">
+      <header class="tweetheader">
+        <img class="avatar" src="/images/stew.jpg">
+        <h2 class="name">Stewart Pressney</h2>
+        <p class="handle">@Sressney</p>
+      </header>
+      <div class="tweetbody">
+        <p class="tweetContent">Vinyl bitters disrupt truffaut man braid kombucha leggings slow-carb af taiyaki. Vaporware vexillologist single-origin coffee blue bottle vegan bespoke bicycle rights lo-fi mustache roof party. Hot chicken coloring book locavore pork belly live-edge.</p>
+      </div>
+      <footer class="tweetfooter">
+        <p class="timestamp"><strong>3 Days Ago</strong></p>
+        <ul class="reactIcons">
+          <li><i class="fas fa-flag"></i></li>
+          <li><i class="fas fa-share"></i></li>
+          <li><i class="fas fa-heart"></i></li>
+        </ul>
+      </footer>
+    </article>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-    </main>
+    <article class="tweet">
+      <header class="tweetheader">
+        <img class="avatar" src="/images/stew.jpg">
+        <h2 class="name">Stewart Pressney</h2>
+        <p class="handle">@Sressney</p>
+      </header>
+      <div class="tweetbody">
+        <p class="tweetContent">Thundercats affogato edison bulb leggings farm-to-table, authentic before they sold out bicycle rights chicharrones fingerstache ethical taiyaki franzen. Craft beer wayfarers truffaut trust fund authentic.</p>
+      </div>
+      <footer class="tweetfooter">
+        <p class="timestamp"><strong>5 Days Ago</strong></p>
+        <ul class="reactIcons">
+          <li><i class="fas fa-flag"></i></li>
+          <li><i class="fas fa-share"></i></li>
+          <li><i class="fas fa-heart"></i></li>
+        </ul>
+      </footer>
+    </article>
 
-  </body>
+    <article class="tweet">
+      <header class="tweetheader">
+        <img class="avatar" src="/images/stew.jpg">
+        <h2 class="name">Stewart Pressney</h2>
+        <p class="handle">@Sressney</p>
+      </header>
+      <div class="tweetbody">
+        <p class="tweetContent">Ethical 8-bit letterpress listicle vape retro blog green juice church-key. Food truck tattooed slow-carb sartorial waistcoat. Gluten-free viral beard tote bag vice hashtag post-ironic fingerstache sriracha.</p>
+      </div>
+      <footer class="tweetfooter">
+        <p class="timestamp"><strong>10 Days Ago</strong></p>
+        <ul class="reactIcons">
+          <li><i class="fas fa-flag"></i></li>
+          <li><i class="fas fa-share"></i></li>
+          <li><i class="fas fa-heart"></i></li>
+        </ul>
+      </footer>
+    </article>
+
+  </main>
+
+</body>
+
 </html>

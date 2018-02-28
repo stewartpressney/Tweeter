@@ -1,0 +1,47 @@
+nav#nav-bar{
+  position: fixed;
+  z-index: 100;
+  box-shadow: 0px 2px 2px grey;
+  top: 0;
+  left: 0;
+  height: 80px;
+  line-height: 80px;
+  width: 100%;
+  padding-left:2em;
+  background-color: #244751;
+  color: #e8fdff;
+}
+
+.logo{
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  float: left;
+}
+
+.header{
+  font-weight: 700;
+  font-size: 200%;
+  float: left;
+  color: white;
+  letter-spacing: 3px;
+}
+
+.tweetButton{
+  float: right;
+  text-decoration: bold;
+  margin: 20px;
+  height: 40px;
+  line-height: 35px;
+  font-family: 'Roboto Condensed', sans-serif;
+  border-radius: 5px;
+  background-color: #244751;
+  color: white;
+}
+
+.tweetButton:hover {
+  background-color: white;
+  color: #244751;
+  font-weight: 700;
+}
+
