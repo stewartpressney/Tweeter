@@ -30,7 +30,9 @@ nav#nav-bar{
 .tweetButton{
   float: right;
   text-decoration: bold;
-  margin: 20px;
+  font-size: 16pt;
+  margin: 20px 40px 20px;
+  padding: 0px 20px 0px;
   height: 40px;
   line-height: 35px;
   font-family: 'Roboto Condensed', sans-serif;
@@ -42,6 +44,12 @@ nav#nav-bar{
 .tweetButton:hover {
   background-color: white;
   color: #244751;
+  font-weight: 700;
+}
+
+.tweetButton:active {
+  background-color: #244751;
+  color: white;
   font-weight: 700;
 }
 

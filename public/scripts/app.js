@@ -1,102 +1,115 @@
-
 $(document).ready(function() {
   //toggle new tweet slider
   $(".new-tweet").hide();
   $(".tweetButton").click(function() {
     $(".new-tweet").slideToggle();
+    $("#inputText").focus();
   });
+
+
+  //render tweets to homepage
+  function renderTweets(tweetData) {
+    $tweets = $('.posts');
+    tweetData.forEach(function(tweet) {
+      $tweets.append(createTweetElement(tweet));
+    });
+  };
+  renderTweets(tweetData);
+
+//Staging HTML Template
+  function createTweetElement(tweetData) {
+    var timestamp = tweetData.created_at / 1000;
+    return $(
+      `<article class="tweet">
+              <header class="tweetheader">
+                <img class="avatar" src="${tweetData.user.avatars.small}">
+                <h2 class="name"> ${tweetData.user.name}</h2>
+                <p class="handle">${tweetData.user.handle}</p>
+              </header>
+
+              <div class="tweetbody">
+                <p>${tweetData.content.text}</p>
+              </div>
+
+              <footer class="tweetfooter">
+               <p class="timestamp" data-livestamp=` + timestamp + `></p>
+                <ul class="reactIcons">
+                  <li><i class="fas fa-flag"></i></li>
+                  <li><i class="fas fa-share"></i></li>
+                  <li><i class="fas fa-heart"></i></li>
+                </ul>
+              </footer>
+            </article>`
+    )
+  };
+
+
+
 });
 
-const tweetData = [
-  {
+
+//temp database
+const tweetData = [{
     "user": {
       "name": "Newton",
       "avatars": {
-        "small":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
+        "small": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
         "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-        "large":   "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+        "large": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
       },
       "handle": "@SirIsaac"
     },
     "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
+      "text": "Vinyl bitters disrupt truffaut man braid kombucha leggings slow-carb af taiyaki. Vaporware vexillologist single-origin coffee blue bottle vegan bespoke bicycle rights lo-fi mustache roof party. Hot chicken coloring book locavore pork belly live-edge."
     },
-    "created_at": 1461116232227
+    "created_at":1461116232227
   },
   {
     "user": {
       "name": "Descartes",
       "avatars": {
-        "small":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
+        "small": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
         "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-        "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
+        "large": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
       },
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
+      "handle": "@rd"
     },
-    "created_at": 1461113959088
+    "content": {
+      "text": "Thundercats affogato edison bulb leggings farm-to-table, authentic before they sold out bicycle rights chicharrones fingerstache ethical taiyaki franzen. Craft beer wayfarers truffaut trust fund authentic."
+    },
+    "created_at": 1461116232227
   },
   {
     "user": {
       "name": "Johann von Goethe",
       "avatars": {
-        "small":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
+        "small": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
         "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-        "large":   "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
+        "large": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
       },
       "handle": "@johann49"
     },
     "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
+      "text": "Ethical 8-bit letterpress listicle vape retro blog green juice church-key. Food truck tattooed slow-carb sartorial waistcoat. Gluten-free viral beard tote bag vice hashtag post-ironic fingerstache sriracha."
     },
-    "created_at": 1461113796368
+    "created_at": 1461116232227
+  },{
+    "user": {
+      "name": "Duder",
+      "avatars": {
+        "small": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
+        "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
+        "large": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
+      },
+      "handle": "@Dudder"
+    },
+    "content": {
+      "text": "Vinyl bitters disrupt truffaut man braid kombucha leggings slow-carb af taiyaki. Vaporware vexillologist single-origin coffee blue bottle vegan bespoke bicycle rights lo-fi mustache roof party. Hot chicken coloring book locavore pork belly live-edge."
+    },
+    "created_at": 1461116232227
   }
 ];
 
-
-function createTweetElement(tweetData){
-  return $(
-
-          `<article class="tweet">
-            <header class="tweetheader">
-              <img class="avatar" src="${tweetData.user.avatars.small}">
-              <h2 class="name"> ${tweetData.user.name}</h2>
-              <p class="handle">${tweetData.user.handle}</p>
-            </header>
-
-            <div class="tweetbody">
-              <p>${tweet.content.text}</p>
-            </div>
-
-            <footer class="tweetfooter">
-             <p class="timestamp"><strong> ${tweetData.created_at} </strong></p>
-              <ul class="reactIcons">
-                <li><i class="fas fa-flag"></i></li>
-                <li><i class="fas fa-share"></i></li>
-                <li><i class="fas fa-heart"></i></li>
-              </ul>
-            </footer>
-          </article>`
-)}
-
-var $tweet = createTweetElement(tweetData)
-
-
-function renderTweets(tweetData){
-  var $tweets = $('.posts').empty();
-  tweetData.forEach(function(tweet){
-    $tweets.append(createTweetElement(tweet));
-  });
-}
-
-renderTweets(data);
-
-
-
-
-//jQuery Solution to css problem.
-//tweet mousover animation
 
 // This is INTENTIONALLY LEFT
 

@@ -1,0 +1,91 @@
+.avatar{
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 100%;
+  margin: 10px;
+  margin-right: 10px;
+  float: left;
+}
+
+.name{
+  float: left;
+    letter-spacing: 1px;
+}
+
+.handle{
+  line-height: 40px;
+  letter-spacing: 1px;
+  margin-right: 10px;
+  float: right;
+}
+
+.tweet {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 5px;
+  background-color: #f4f4f4;
+  border: 1px solid #244751;
+  box-shadow: 0px 1px 1px grey;
+  opacity: .90;
+}
+
+.tweet:hover {
+  opacity: 1;
+}
+
+.tweet:hover .reactIcons{
+   opacity: 1;
+}
+
+
+.tweetheader{
+  background-color: #244751;
+  overflow: auto;
+  line-height: 40px;
+  color: white;
+}
+
+
+.tweetbody{
+  display: inline-block;
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+}
+
+.tweetContent{
+  padding: 20px;
+}
+
+.tweetfooter{
+  height: 40px;
+  line-height: 20px;
+  width: 100%;
+}
+
+.timestamp{
+  color: #274359;
+  margin-left: 20px;
+  float: left;
+}
+
+.reactIcons{
+   list-style-type: none;
+   float: right;
+   height: 80%;
+   opacity: 0;
+   color: #244751;
+   margin-right: 10
+}
+
+i:hover {
+   color: #498FA3;
+}
+
+li{
+  margin-right: 8px;
+  float: right;
+}
