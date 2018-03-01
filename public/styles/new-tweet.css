@@ -7,12 +7,12 @@
   background-color: #f4f4f4;
   /*background-image: url("/images/background.png");*/
   border: 2px solid #244751;
-  padding: 6px 6px 0;
+  padding: 0 6px 0;
 }
 
 
 #compTweetTitle{
-  padding-top: 10px;
+  padding-top: 8px;
   margin: 10px;
   letter-spacing: 3px;
   border-bottom: 1px solid #244751;

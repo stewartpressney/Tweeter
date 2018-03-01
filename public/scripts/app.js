@@ -80,8 +80,26 @@ $(document).ready(function() {
   }
 
 
+
+  /////STRETCHHHHHHHHHHHHHHHHHH
+
+  function likeCount() {
+    var clicks = 0;
+
+    $("#clicks").text = clicks;
+
+    $('#like-counter').on("click", function() {
+      clicks += 1;
+      console.log(clicks);
+      $("#clicks").text = clicks;
+      $('#like-counter').addClass("liked");
+    });
+  };
+
+
   //Staging HTML Template
   function createTweetElement(tweetData) {
+    likeCount()
     //set livestamp middleware
     var timestamp = tweetData.created_at / 1000;
     //return staging HTML Template with Tweet Data
@@ -102,7 +120,7 @@ $(document).ready(function() {
                 <ul class="reactIcons">
                   <li><i class="fas fa-flag"></i></li>
                   <li><i class="fas fa-share"></i></li>
-                  <li><i class="fas fa-heart"></i></li>
+                  <li href="#" id="like-counter"><i class="fas fa-heart"></i><span class="click-text"><a id="clicks"></span></li>
                 </ul>
               </footer>
             </article>`
@@ -111,77 +129,4 @@ $(document).ready(function() {
 });
 
 
-
-//temp database
-// const tweetData = [{
-//     "user": {
-//       "name": "Newton",
-//       "avatars": {
-//         "small": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-//         "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-//         "large": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-//       },
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "Vinyl bitters disrupt truffaut man braid kombucha leggings slow-carb af taiyaki. Vaporware vexillologist single-origin coffee blue bottle vegan bespoke bicycle rights lo-fi mustache roof party. Hot chicken coloring book locavore pork belly live-edge."
-//     },
-//     "created_at":1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": {
-//         "small": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_50.png",
-//         "regular": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc.png",
-//         "large": "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
-//       },
-//       "handle": "@rd"
-//     },
-//     "content": {
-//       "text": "Thundercats affogato edison bulb leggings farm-to-table, authentic before they sold out bicycle rights chicharrones fingerstache ethical taiyaki franzen. Craft beer wayfarers truffaut trust fund authentic."
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Johann von Goethe",
-//       "avatars": {
-//         "small": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_50.png",
-//         "regular": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1.png",
-//         "large": "https://vanillicon.com/d55cf8e18b47d4baaf60c006a0de39e1_200.png"
-//       },
-//       "handle": "@johann49"
-//     },
-//     "content": {
-//       "text": "Ethical 8-bit letterpress listicle vape retro blog green juice church-key. Food truck tattooed slow-carb sartorial waistcoat. Gluten-free viral beard tote bag vice hashtag post-ironic fingerstache sriracha."
-//     },
-//     "created_at": 1461116232227
-//   },{
-//     "user": {
-//       "name": "Duder",
-//       "avatars": {
-//         "small": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_50.png",
-//         "regular": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188.png",
-//         "large": "https://vanillicon.com/788e533873e80d2002fa14e1412b4188_200.png"
-//       },
-//       "handle": "@Dudder"
-//     },
-//     "content": {
-//       "text": "Vinyl bitters disrupt truffaut man braid kombucha leggings slow-carb af taiyaki. Vaporware vexillologist single-origin coffee blue bottle vegan bespoke bicycle rights lo-fi mustache roof party. Hot chicken coloring book locavore pork belly live-edge."
-//     },
-//     "created_at": 1461116232227
-//   }
-// ];
-
-
-// This is INTENTIONALLY LEFT
-
-// $(".tweetheader").css("opacity", ".75");
-//   $(".reactIcons").hide();
-//   $(".tweet").hover(function() {
-//     $(this).find(".reactIcons").show();
-//   }, function() {
-//     $(this).find(".reactIcons").hide();
-//   });
-// });
+// <li><a href="#" id="like-counter"><i class="fas fa-heart"></i></a><span class="click-text"><a id="clicks"></span></li>
