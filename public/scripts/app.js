@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
-
-
   //Load Tweets from DB
-
   loadTweets();
   //toggle new tweet slider
   $(".new-tweet").hide();
@@ -17,6 +14,7 @@ $(document).ready(function() {
 
   //On submit from .newTweet
   $(".newTweet").submit(function(event) {
+    //likeCount()
     var text = $('#inputText').val();
     //Stop defalt redirect
     event.preventDefault();
@@ -40,7 +38,6 @@ $(document).ready(function() {
   });
 
 
-
   // validate that tweet length is
   function validate(tweetText) {
     if (!tweetText) {
@@ -55,7 +52,6 @@ $(document).ready(function() {
   }
 
 
-
   //render tweets to homepage
   function renderTweets(tweetData) {
     //create destination for template
@@ -67,7 +63,7 @@ $(document).ready(function() {
     });
   };
 
-
+  //Load tweet data ready to render
   function loadTweets() {
     $.ajax({
       url: "http://localhost:8080/tweets",
@@ -80,26 +76,9 @@ $(document).ready(function() {
   }
 
 
-
-  /////STRETCHHHHHHHHHHHHHHHHHH
-
-  function likeCount() {
-    var clicks = 0;
-
-    $("#clicks").text = clicks;
-
-    $('#like-counter').on("click", function() {
-      clicks += 1;
-      console.log(clicks);
-      $("#clicks").text = clicks;
-      $('#like-counter').addClass("liked");
-    });
-  };
-
-
   //Staging HTML Template
   function createTweetElement(tweetData) {
-    likeCount()
+    //likeCount()
     //set livestamp middleware
     var timestamp = tweetData.created_at / 1000;
     //return staging HTML Template with Tweet Data
@@ -120,7 +99,7 @@ $(document).ready(function() {
                 <ul class="reactIcons">
                   <li><i class="fas fa-flag"></i></li>
                   <li><i class="fas fa-share"></i></li>
-                  <li href="#" id="like-counter"><i class="fas fa-heart"></i><span class="click-text"><a id="clicks"></span></li>
+                  <li><i class="fas fa-heart"></i></li>
                 </ul>
               </footer>
             </article>`
@@ -128,5 +107,21 @@ $(document).ready(function() {
   };
 });
 
+  /////STRETCHHHHHHHHHHHHHHHHHH
 
-// <li><a href="#" id="like-counter"><i class="fas fa-heart"></i></a><span class="click-text"><a id="clicks"></span></li>
+  // function likeCount() {
+  //   console.log('hi')
+  //   var clicks = 0;
+
+  //   $("#clicks").text = clicks;
+
+  //   $('#like-counter').on("click", function() {
+  //     clicks += 1;
+  //     console.log(clicks);
+  //     $("#clicks").text = clicks;
+  //     $('#like-counter').addClass("liked");
+  //   });
+  // };
+
+
+// <li href="#" id="like-counter"><i class="fas fa-heart"></i><span class="click-text"><a id="clicks"></span></li>
